@@ -1,9 +1,6 @@
 function solution(nums) {
-    let canSelect = nums.length/2
-    let pokemon = new Set([...nums]).size
-    if(pokemon >= canSelect){
-        return canSelect;
-    }else{
-        return pokemon;
-    }
+  const max = nums.length / 2;
+  const arr = [...new Set(nums)];
+
+  return arr.length > max ? max : arr.length
 }
