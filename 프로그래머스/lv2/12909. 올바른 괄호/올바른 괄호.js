@@ -1,15 +1,20 @@
 function solution(s) {
-  let count = 0;
-  for (let i = 0; i < s.length; i++) {
-    let str = s[i];
-    if (str === '(') {
-      count++;
-    } else {
-      count--;
+    if(s[0] == ')'){
+    return false
     }
-    if (count < 0) {
-      return false;
+    let arr = []
+    for(let i=0; i<s.length; i++){
+        if(s[i] === '('){
+            arr.push(')')
+        }else{
+            arr.pop()
+        }
     }
-  }
-  return count === 0;
+    return arr.length === 0
+    if(arr.length != 0){
+        return false
+    }
+
+
+    
 }
