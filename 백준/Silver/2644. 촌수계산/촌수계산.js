@@ -33,8 +33,10 @@ const bfs = (start, end) => {
     if (depth[end] === 0) {
         return -1
     } else {
-        return Math.abs(depth[start] - depth[end]);
+        return depth[end] - depth[start];
     }
 }
 
 console.log(bfs(x, y))
+
+
