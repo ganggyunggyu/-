@@ -3,15 +3,14 @@ const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 const N = +input.join("");
 
-
 let result = 0;
 let cnt = 0;
 
-while (true) {
+while (result != N) {
   cnt++;
   if (cnt.toString().includes("666")) result++;
-  if (result === N) {
-    break;
-  }
+
 }
+
 console.log(cnt);
+
