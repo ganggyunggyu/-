@@ -21,7 +21,9 @@ function solution(board, moves) {
             for(let j=0; j<board.length; j++){
                 if(board[j][moves[i]-1] !== 0){
                     stack.push(board[j][moves[i]-1])
-                    boom(stack)
+                    if(stack[stack.length-2] === stack[stack.length-1]){
+                        boom(stack)
+                    }
                     board[j][moves[i]-1] = 0
                     break;
                 }else{
@@ -29,12 +31,9 @@ function solution(board, moves) {
                 }
             }
         }
-        console.log(stack)
-        console.log(board)
     }
     
 
-    
     peek()
     return count
 }
