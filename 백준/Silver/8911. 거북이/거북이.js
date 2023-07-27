@@ -50,13 +50,12 @@ const solution = (n) => {
       }
     }
 
-
     tutle[0] > max_x ? max_x = tutle[0] : max_x = max_x
     tutle[0] < min_x ? min_x = tutle[0] : min_x = min_x
     tutle[1] > max_y ? max_y = tutle[1] : max_y = max_y
     tutle[1] < min_y ? min_y = tutle[1] : min_y = min_y
   }
-  return Math.abs((max_x - min_x)*(max_y - min_y))
+  return (max_x - min_x)*(max_y - min_y)
    
 }
 
