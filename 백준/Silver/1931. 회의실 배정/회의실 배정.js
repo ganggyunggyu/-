@@ -1,11 +1,10 @@
 const fs = require('fs');
-const file = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-const input = fs.readFileSync(file).toString().trim().split('\n');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const [n, ...arr] = input;
-let answer = 0;
+const [N, ...arr] = input;
+
 const times = arr
-  .map((num) => num.split(' ').map((num) => +num))
+  .map((el) => el.split(' ').map((el) => +el))
   .sort((a, b) => {
     if (a[1] === b[1]) {
       return a[0] - b[0];
@@ -14,12 +13,14 @@ const times = arr
     }
   });
 
-let et = 0;
-times.forEach((time) => {
-  if (time[0] >= et) {
-    answer++;
-    et = time[1];
-  }
-});
+let tmp = 0;
+let result = 0;
 
-console.log(answer);
+for (const time of times) {
+  if (time[0] >= tmp) {
+    result++;
+    tmp = time[1];
+  }
+}
+
+console.log(result);
