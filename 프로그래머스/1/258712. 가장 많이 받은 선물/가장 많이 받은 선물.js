@@ -1,14 +1,14 @@
 function solution(friends, gifts) {
-    
-    
     const map = new Map();
     
     const graph = Array.from({length : friends.length},()=>0).map(_ => new Array(friends.length).fill(0));
-    const score = Array.from({length : friends.length},()=>0)
+    const score = Array.from({length : friends.length},()=>0) 
     const results = Array.from({length : friends.length},()=>0)
+    
     friends.forEach((name, idx) => {
         map.set(name, idx);
     })
+    
     
     
     gifts.forEach(el => {
@@ -24,6 +24,7 @@ function solution(friends, gifts) {
             score[i] -= graph[j][i];       
         }
     }
+    
     
     
     for (let i=0; i<friends.length; i++) {
@@ -60,7 +61,6 @@ A는 B에게 선물을 하나 받는다.
 
 1. 이번달 선물 정보에 대한 배열이 필요하다.
 2. 이번달 선물 정보를 이용해 선물 지수를 기록해준다.
-3. 선물 지수를 이용해 다음달 받을 선물에 대한 정보를 계산해준다.
-
+3. 이번달 선물 정보, 선물 지수를 이용해 다음달 받을 선물에 대한 정보를 계산해준다.
 
 */
