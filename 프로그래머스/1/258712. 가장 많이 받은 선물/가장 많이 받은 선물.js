@@ -25,7 +25,7 @@ function solution(friends, gifts) {
         }
     }
     
-    
+    console.log('123213')
     
     for (let i=0; i<friends.length; i++) {
         for (let j=i+1; j<friends.length; j++) {
@@ -44,6 +44,7 @@ function solution(friends, gifts) {
     
     
     return Math.max(...results)
+    // return 'asdadasdasddd'
 }
 
 /*
